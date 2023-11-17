@@ -1,0 +1,251 @@
+:root {
+    --primary: #181818;
+    --spacing: 4rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: arial, helvetica, sans-serif;
+}
+
+.neutral-theme {
+    background-color: white;
+    --button-color: var(--primary);
+    --button-hover-color: white;
+}
+
+.primary-theme {
+    color: white;
+    background-color: var(--primary);
+    --button-color: white;
+    --button-hover-color: var(--primary);
+}
+
+header {
+    background: url('Night sky.gif') no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.8);    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+h2 {
+    margin-bottom: var(--spacing);
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+section {
+    padding: var(--spacing);
+}
+
+.heading-highlight {
+    color: #f8cd5e;
+}
+
+.button {
+    display: inline-block;
+    width: max-content;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.button:hover {
+    color: #181818;
+    background-color: #ffffff;
+}
+
+.header-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-link::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .5rem .5rem 0 .5rem;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.header-link:hover::after {
+    border-color: #181818 transparent transparent transparent;
+}
+
+.about {
+    padding: var(--spacing);
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.about::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    width: 0;
+    height: 0;
+    border-top: 100px solid var(--primary);
+    border-right: 100vw solid transparent;
+}
+
+.about-img {
+    max-width: 350px;
+    filter: grayscale(100%);
+}
+
+.about-img:hover {
+    filter: grayscale(0);
+}
+
+p {
+    margin-bottom: 1em;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.about-info {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+
+}
+
+blockquote {
+    margin-top: var(--spacing);
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+article {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.article-img {
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.contact {
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -100px;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid var(--primary);
+    border-left: 100vw solid transparent;
+}
+
+footer {
+    padding: var(--spacing);
+    background-color: #333;
+    color: white;
+    & p {
+        text-align: center;
+    }
+}
+
+.social {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: var(--spacing);
+}
+
+.social-link {
+    display: block;
+    width: 60px;
+    height: 60px;
+    color: transparent;
+    font-size: 1px;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    filter: invert(100);
+    transition: all 0.2s ease-in-out;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+.li {
+    background-image: url(social-icons/li.png);
+}
+
+.ty {
+    background-image: url(social-icons/yt.png);
+}
+
+.gh {
+    background-image: url(social-icons/gh.png);
+}
+
+.tw {
+    background-image: url(social-icons/tw.png);
+}
+
+@media (min-width: 800px) {
+    .about-info {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    article {
+        flex-direction: row;
+        max-width: 960px;
+        gap: 2rem;
+        margin: 0 auto var(--spacing);
+    }
+
+    .article-img {
+        max-width: 350px;
+        object-fit: cover;
+    }
+}
